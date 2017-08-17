@@ -2,6 +2,8 @@
 
 A collection of files and GodMode9 scripts to easily install NTRBootHax onto a stock 2DS/3DS console without the need of a computer after initial setup of the microSD card.
 
+&lt;id0&gt;
+
 ### Requirements:
 1. A NTRBootHax NDS flash cart
 2. A microSD card
@@ -21,7 +23,7 @@ A collection of files and GodMode9 scripts to easily install NTRBootHax onto a s
 7. Press `A` and select `FIRM image options > Boot FIRM`.
 8. Input key combo to start SafeBoot9StrapInstaller.
 9. Follow on-screen instructions to install B9S to target device.
-10. After a successful install press `Start` to reboot back into GodMode9.
+10. After a successful install press `A` to reboot back into GodMode9.
 
 ##### Move essential files to target SD:
 11. Decline making an essential backup again. Press the Home button and go to `More > Scripts > 1-SD2RAM`
