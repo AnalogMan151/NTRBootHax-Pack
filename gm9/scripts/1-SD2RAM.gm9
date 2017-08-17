@@ -1,0 +1,21 @@
+# GodMode9 "SD2RAM"
+# Script to copy contents of SD card to RAMDISK
+# last changed: 20170816
+# author: AnalogMan
+
+set ERRORMSG "Copy failed/aborted"
+set SUCCESSMSG "Copy succeeded"
+
+# Grant write access to RAMDISK
+allow -a 9:/
+
+# Prompt for continue
+ask "Copy SD contents to RAMDISK?"
+
+# Copy SD card to RAMDISK
+cp -n 0:/3ds        9:/3ds
+cp -n 0:/cia        9:/cia
+cp -n 0:/gm9        9:/gm9
+cp -n 0:/luma       9:/luma
+cp -n 0:/boot.3dsx  9:/boot.3dsx
+cp -n 0:/luma.firm  9:/boot.firm
