@@ -2,8 +2,6 @@
 
 A collection of files and GodMode9 scripts to easily install NTRBootHax onto a stock 2DS/3DS console without the need of a computer after initial setup of the microSD card.
 
-&lt;id0&gt;
-
 ### Requirements:
 1. A NTRBootHax NDS flash cart
 2. A microSD card
