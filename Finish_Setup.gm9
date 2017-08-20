@@ -1,0 +1,40 @@
+# GodMode9 "RAM2SD"
+# Script to copy contents of RAMDISK to SD Card
+# last changed: 20170816
+# author: AnalogMan
+
+set ERRORMSG "Setup Failed"
+set SUCCESSMSG "Success! Use Rosalina menu to run Homebrew Launcher\n \nUse FBI to install & delete all CIAs\nin the cia folder\n \nThis console will now reboot."
+
+# Grant write access to SD Card
+allow 0:/
+
+# Prompt for continue
+ask "Copy RAMDISK contents to SD?"
+
+# Copy all of RAMDISK to SD Card
+cp -n -w 9:/pack/3ds            0:/3ds
+cp -n -w 9:/pack/cia            0:/cia
+cp -n -w 9:/pack/gm9            0:/gm9
+cp -n -w 9:/pack/luma           0:/luma
+cp -n -w 9:/pack/boot.3dsx      0:/boot.3dsx
+cp -n -w 9:/pack/boot.firm      0:/boot.firm
+
+# Prompt for NAND Setup
+ask "Copy Luma3DS to NAND?"
+
+# Grant write access to NAND
+allow -a 1:/
+
+# remove existing files just in case
+rm -o -s 1:/boot.firm
+rm -o -s 1:/rw/luma
+
+# copy specific files over
+cp 0:/boot.firm 1:/boot.firm
+mkdir 1:/rw/luma
+cp 0:/luma/payloads 1:/rw/luma/payloads
+
+echo "$[SUCCESSMSG]"
+
+reboot

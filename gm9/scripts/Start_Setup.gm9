@@ -1,0 +1,26 @@
+# GodMode9 "Start_Setup"
+# Script to copy contents of SD card to RAMDISK & install SigHax firm
+# last changed: 20170820
+# author: AnalogMan
+
+set ERRORMSG "Failed/aborted"
+set SUCCESSMSG "Success! Unmount & swap SD cards.\n \nRun 9:/Finish_Setup.gm9 to complete."
+
+# Grant write access to RAMDISK
+allow 9:/
+
+# Prompt for Sighax install
+ask "Install Boot9Strap?"
+
+# Grant write access to SysNAND Virtual
+allow S:/
+
+cp -n 0:/sighax.bin S:/firm0.bin
+cp -n 0:/sighax.bin S:/firm1.bin
+
+# Prompt for continue
+ask "Copy SD contents to RAMDISK?"
+
+# Copy SD card to RAMDISK
+cp -n 0:/pack                       9:/pack
+cp -n 0:/Finish_setup.gm9           9:/Finish_Setup.gm9
