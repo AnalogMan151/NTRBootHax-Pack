@@ -10,7 +10,7 @@ A collection of files and GodMode9 scripts to easily install NTRBootHax onto a s
 5. A microSD to SD adapter for 2DS and o3DS/XL
 
 ### Setup:
-Copy the "pack" folder, "gm9" folder, boot.firm, Finish_Setup.gm9, and sighax.bin files to the root of your setup SD card.
+Copy the `pack` folder, `gm9` folder, `boot9strap` folder, `boot.firm` and `Finish_Setup.gm9` files to the root of your setup SD card.
 
 ### Instructions:
 
@@ -20,27 +20,25 @@ Copy the "pack" folder, "gm9" folder, boot.firm, Finish_Setup.gm9, and sighax.bi
 3. Place magnet on target device so that the device sleeps without the lid being shut. On 2DS no magnet is needed, only the sleep switch set to the sleep position. Make sure device is powered off.
 4. Hold `Start`+`Select`+`X` and then press and hold the power button until the power LED lights up. Let go of all four buttons.
 5. GodMode9 should open. Decline making an essential backup. If the device starts up as normal, try again, check the magnet position or check that your NTRBootHax flash cart is properly made.
-6. Press the Home button and go to `More > Scripts > Start_Setup`
-7. Confirm unlocking SysNAND Lv3 write permissions by inputting button combo.
+6. Press the Home button and go to `Scripts... > Start_Setup`
+7. Confirm unlocking SysNAND lvl 3 write permissions by inputting button combo.
 
 ##### Move essential files to target SD and sysNAND:
-8. Confirm moving SD files from setup SD card to RAMDISK.
-9. Follow on-screen instructions to unmount setup SD card and insert target SD card.
-10. Scroll down and press `A` on `[9:] RAMDRIVE`.
-11. Press `A` on `Finish_Setup.gm9`. Confirm running the script.
-12. Confirm moving files from RAMDISK to SD card.
-13. Confirm copying Luma3DS to sysNAND and unlock Lv1 write permissions.
-14. Press `A` to reboot device.
-15. Select desired Luma3DS options and press `Start` to save and boot into the Home Menu.
+8. Follow on-screen instructions to unmount setup SD card and insert target SD card.
+9. Scroll down and press `A` on `[9:] RAMDRIVE`.
+10. Press `A` on `Finish_Setup.gm9`. Confirm running the script.
+11. Confirm & unlock lvl 1 write permissions.
+12. Press `A` to reboot device.
+13. Select desired Luma3DS options and press `Start` to save and boot into the Home Menu.
 
 ##### Finalizing setup:
-16. Open the Download Play app.
-17. Press `L`+`Select`+`Down` to bring up the Rosalina menu.
-18. Scroll to `Miscellaneous Options > Switch the hb. title to the current app`.
-19. Press `A` to set Download Play as the Homebrew Launcher. Press `B` to exit Rosalina menu.
-20. Press the Power button followed by the Home button and reopen Download Play.
-21. Scroll down to FBI and open the FBI homebrew.
-22. In FBI go to `SD > cia > homebrew`. Press `A` on `<current directory>` and choose `Install and delete all CIAs`.
-23. When all CIAs have been installed close the FBI app and restart device.
-24. Unwrap all your new Homebrew apps and run Luma Updater to ensure you're up to date.
-25. You're done!
+14. Open the Download Play app.
+15. Press `L`+`Select`+`Down` to bring up the Rosalina menu.
+16. Scroll to `Miscellaneous Options > Switch the hb. title to the current app`.
+17. Press `A` to set Download Play as the Homebrew Launcher. Press `B` three times to exit Rosalina menu.
+18. Press the Power button followed by the Home button and reopen Download Play.
+19. Scroll down to FBI and open the FBI homebrew.
+20. In FBI go to `SD > cia > homebrew`. Press `A` on `<current directory>` and choose `Install and delete all CIAs`.
+21. When all CIAs have been installed close the FBI app and restart device.
+22. Unwrap all your new Homebrew apps and run Luma Updater to ensure you're up to date.
+23. You're done!
