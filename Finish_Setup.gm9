@@ -9,6 +9,9 @@ set SUCCESSMSG "Success! Use Rosalina menu to run Homebrew Launcher\n \nUse FBI 
 # Grant write access to SD Card
 allow -a 0:
 
+# Grant write access to NAND
+allow -a 1:
+
 # Copy all of RAMDISK to SD Card
 cp -n -w 9:/pack/3ds            0:/3ds
 cp -n -w 9:/pack/cia            0:/cia
@@ -16,9 +19,6 @@ cp -n -w 9:/pack/gm9            0:/gm9
 cp -n -w 9:/pack/luma           0:/luma
 cp -n -w 9:/pack/boot.3dsx      0:/boot.3dsx
 cp -n -w 9:/pack/boot.firm      0:/boot.firm
-
-# Grant write access to NAND
-allow -a 1:
 
 # remove existing files just in case
 rm -o -s 1:/rw/luma
