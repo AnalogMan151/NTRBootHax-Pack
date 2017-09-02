@@ -1,0 +1,66 @@
+# GodMode9 "Start_Setup"
+# Script to copy contents of SD card to RAMDISK & install SigHax firm
+# last changed: 20170902
+# author: AnalogMan
+
+set SUCCESSMSG "Success! Use Rosalina menu to run Homebrew Launcher\n \nUse FBI to install & delete all CIAs\nin the cia folder\n \nThis console will now reboot."
+
+# Check for required files
+set ERRORMSG "Could not find boot9strap.firm"
+find 0:/boot9strap/boot9stra*.firm B9S
+set ERRORMSG "boot9strap.firm failed SHA check"
+sha $[B9S] $[B9S].sha
+
+set ERRORMSG "Setup failed/aborted!"
+
+# Grant write access to SysNAND Virtual
+allow -a S:
+
+# Grant write access to RAMDISK
+allow -a 9:
+
+# Grant write access to SD
+allow -a 0:
+
+# Install Boot9Strap
+cp -w -n $[B9S] S:/firm0.bin
+cp -w -n $[B9S] S:/firm1.bin
+
+# Copy SD card to RAMDISK
+cp -w -n 0:/pack                9:/pack
+cp -w -n 0:/boot.firm           9:/pack/luma/payloads/GodMode9.firm
+
+# Unmount SD
+sdumount
+
+echo "Success! Swap SD cards now."
+
+set ERRORMSG "SD cards not swapped! Aborting."
+ask "Have SD cards been swapped?"
+
+# Mount SD
+sdmount
+
+# Check if cards were actually swapped
+findnot 0:/gm9/scripts/Setup.gm9 NULL
+
+set ERRORMSG "Setup failed!"
+
+# Copy all of RAMDISK to SD Card
+cp -n -w 9:/pack/3ds            0:/3ds
+cp -n -w 9:/pack/cia            0:/cia
+cp -n -w 9:/pack/gm9            0:/gm9
+cp -n -w 9:/pack/luma           0:/luma
+cp -n -w 9:/pack/boot.3dsx      0:/boot.3dsx
+cp -n -w 9:/pack/boot.firm      0:/boot.firm
+
+# remove existing files just in case
+rm -o -s 1:/rw/luma
+
+# copy specific files over
+cp -w -n 0:/boot.firm           1:/boot.firm
+cp -w -n 0:/luma/payloads       1:/rw/luma/payloads
+
+echo "$[SUCCESSMSG]"
+
+reboot
