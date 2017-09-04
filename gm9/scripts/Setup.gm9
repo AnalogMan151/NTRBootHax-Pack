@@ -30,16 +30,9 @@ cp -w -n $[B9S] S:/firm1.bin
 cp -w -n 0:/pack                9:/pack
 cp -w -n 0:/boot.firm           9:/pack/luma/payloads/GodMode9.firm
 
-# Unmount SD
-sdumount
-
-echo "Success! Swap SD cards now."
-
+# Switch SD
 set ERRORMSG "SD cards not swapped! Aborting."
-ask "Have SD cards been swapped?"
-
-# Mount SD
-sdmount
+switchsd "B9S installed. Swap SD cards now."
 
 # Check if cards were actually swapped
 findnot 0:/gm9/scripts/Setup.gm9 NULL
