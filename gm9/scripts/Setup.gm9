@@ -1,6 +1,6 @@
-# GodMode9 "Start_Setup"
-# Script to copy contents of SD card to RAMDISK & install SigHax firm
-# last changed: 20170902
+# GodMode9 "Setup"
+# Script to transfer contents of SD card & install SigHax firm
+# last changed: 20170906
 # author: AnalogMan
 
 set SUCCESSMSG "Success! Use Rosalina menu to run Homebrew Launcher\n \nUse FBI to install & delete all CIAs\nin the cia folder\n \nThis console will now reboot."
@@ -8,6 +8,7 @@ set SUCCESSMSG "Success! Use Rosalina menu to run Homebrew Launcher\n \nUse FBI 
 # Check for required files
 set ERRORMSG "Could not find boot9strap.firm"
 find 0:/boot9strap/boot9stra*.firm B9S
+
 set ERRORMSG "boot9strap.firm failed SHA check"
 sha $[B9S] $[B9S].sha
 
