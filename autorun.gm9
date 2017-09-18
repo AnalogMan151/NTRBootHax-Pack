@@ -1,6 +1,6 @@
 # GodMode9 "Setup"
 # Script to transfer contents of SD card & install SigHax firm
-# last changed: 20170906
+# last changed: 20170918
 # author: AnalogMan
 
 set SUCCESSMSG "Success! Use Rosalina menu to run Homebrew Launcher\n \nUse FBI to install & delete all CIAs\nin the cia folder\n \nThis console will now reboot."
@@ -17,9 +17,6 @@ set ERRORMSG "Setup failed/aborted!"
 # Grant write access to SysNAND Virtual
 allow -a S:
 
-# Grant write access to RAMDISK
-allow -a 9:
-
 # Grant write access to SD
 allow -a 0:
 
@@ -27,26 +24,10 @@ allow -a 0:
 cp -w -n $[B9S] S:/firm0.bin
 cp -w -n $[B9S] S:/firm1.bin
 
-# Copy SD card to RAMDISK
-cp -w -n 0:/pack                9:/pack
-cp -w -n 0:/boot.firm           9:/pack/luma/payloads/GodMode9.firm
-
-# Switch SD
-set ERRORMSG "SD cards not swapped! Aborting."
-switchsd "B9S installed. Swap SD cards now."
-
-# Check if cards were actually swapped
-findnot 0:/gm9/scripts/Setup.gm9 NULL
-
 set ERRORMSG "Setup failed!"
 
-# Copy all of RAMDISK to SD Card
-cp -n -w 9:/pack/3ds            0:/3ds
-cp -n -w 9:/pack/cia            0:/cia
-cp -n -w 9:/pack/gm9            0:/gm9
-cp -n -w 9:/pack/luma           0:/luma
-cp -n -w 9:/pack/boot.3dsx      0:/boot.3dsx
-cp -n -w 9:/pack/boot.firm      0:/boot.firm
+# Switch Godmode9 for Luma
+mv -w -n 0:/luma.firm 0:/boot.firm
 
 # remove existing files just in case
 rm -o -s 1:/rw/luma
