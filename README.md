@@ -25,11 +25,7 @@ Extract the contents of the zip file to the root of your SD card.
 
 ##### Finalizing setup:
 8. Open the Download Play app.
-9. Press `L`+`Select`+`Down` to bring up the Rosalina menu.
-10. Scroll to `Miscellaneous Options > Switch the hb. title to the current app`.
-11. Press `A` to set Download Play as the Homebrew Launcher. Press `B` three times to exit Rosalina menu.
-12. Press the Power button followed by the Home button and reopen Download Play.
-13. Scroll down to FBI and open the FBI homebrew.
-14. In FBI go to `SD > cia > homebrew`. Press `A` on `<current directory>` and choose `Install and delete all CIAs`.
-15. When all CIAs have been installed restart the console.
-16. Unwrap all your new Homebrew apps and run Luma Updater to ensure you're up to date.
+9. Scroll down to FBI and open the FBI homebrew.
+10. In FBI go to `SD > cia > homebrew`. Press `A` on `<current directory>` and choose `Install and delete all CIAs`.
+11. When all CIAs have been installed restart the console.
+12. Unwrap all your new Homebrew apps and run Luma Updater to ensure you're up to date.
