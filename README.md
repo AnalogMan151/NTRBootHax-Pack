@@ -29,12 +29,4 @@ Copy the `pack`, `gm9`, & `boot9strap` folders, and `boot.firm` file to the root
 10. Select desired Luma3DS options and press `Start` to save and boot into the Home Menu.
 
 ##### Finalizing setup:
-11. Open the Download Play app.
-12. Press `L`+`Select`+`Down` to bring up the Rosalina menu.
-13. Scroll to `Miscellaneous Options > Switch the hb. title to the current app`.
-14. Press `A` to set Download Play as the Homebrew Launcher. Press `B` three times to exit Rosalina menu.
-15. Press the Power button followed by the Home button and reopen Download Play.
-16. Scroll down to FBI and open the FBI homebrew.
-17. In FBI go to `SD > cia > homebrew`. Press `A` on `<current directory>` and choose `Install and delete all CIAs`.
-18. When all CIAs have been installed restart the console.
-19. Unwrap all your new Homebrew apps and run Luma Updater to ensure you're up to date.
+11. Unwrap the installed CIAs and use the Universal Updater to ensure you're up to date.
